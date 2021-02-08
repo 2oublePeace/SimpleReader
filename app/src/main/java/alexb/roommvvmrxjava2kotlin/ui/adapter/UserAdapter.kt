@@ -18,7 +18,6 @@ class UserAdapter:
 
     fun setUser(list: List<User>) {
         userList.clear()
-            println("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF")
         userList.addAll(list)
         notifyDataSetChanged()
     }
