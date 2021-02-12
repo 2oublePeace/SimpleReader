@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">room-mvvm-rxjava2-kotlin</string>
+    <string name="app_name">App</string>
+    <string name="sport">Спорт: %1$s</string>
+    <string name="user_name">%1$s %2$s</string>
+    <string name="add_user">Добавить пользователя</string>
+    <string name="user_first_name">Имя пользователя</string>
+    <string name="user_last_name">Фамилия пользователя</string>
+    <string name="user_sport">Название спорта</string>
+    <string name="save">Save</string>
 </resources>
