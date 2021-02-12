@@ -20,16 +20,18 @@ class UserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_activity)
         if (intent.hasExtra(EXTRA_EDIT_USER)) {
-            people = intent.extras?.get(EXTRA_EDIT_USER) as User?
+            people = intent.extras?.get(EXTRA_EDIT_USER) as User
         }
         initViews(people)
     }
 
     private fun initViews(people: User?) {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        et_first_name.setText(people?.firstName)
-        et_last_name.setText(people?.lastName)
-        et_sport.setText(people?.sport)
+        if (people != null) {
+            et_first_name.setText(people.firstName)
+            et_last_name.setText(people.lastName)
+            et_sport.setText(people.sport)
+        }
     }
 
     private fun saveUser() {
@@ -79,4 +81,3 @@ class UserActivity : AppCompatActivity() {
         }
     }
 }
-

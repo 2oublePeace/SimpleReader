@@ -14,7 +14,7 @@ class UserAdapter:
 
     private var userList = mutableListOf<User>()
 
-    var onClick: ((User) -> Unit)? = null
+    lateinit var onClick: ((User) -> Unit)
 
     fun setUser(list: List<User>) {
         userList.clear()
@@ -38,7 +38,7 @@ class UserAdapter:
 
         init {
             itemView.setOnClickListener {
-                user?.let { it1 -> onClick?.invoke(it1) }
+                user?.let { it1 -> onClick.invoke(it1) }
             }
         }
     }
@@ -64,4 +64,3 @@ class UserAdapter:
         holder.bind(userList[position])
     }
 }
-

@@ -57,10 +57,10 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         val user: User? = null
         if (requestCode == ADD_USER_REQUEST && resultCode == Activity.RESULT_OK) {
-            user.let { viewModel.saveUser(data?.extras?.get(EXTRA_REQUEST) as? User) }
+            user.let { viewModel.saveUser(data?.extras?.get(EXTRA_REQUEST) as User) }
 
         } else if (requestCode == EDIT_USER_REQUEST && resultCode == Activity.RESULT_OK) {
-            user.let { viewModel.updateUser(data?.extras?.get(EXTRA_REQUEST) as? User) }
+            user.let { viewModel.updateUser(data?.extras?.get(EXTRA_REQUEST) as User) }
 
         }
     }

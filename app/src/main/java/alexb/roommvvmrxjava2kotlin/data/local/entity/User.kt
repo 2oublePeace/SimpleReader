@@ -12,39 +12,3 @@ data class User(
     @ColumnInfo(name = "last_name") val lastName: String?,
     @ColumnInfo(name = "sport") val sport: String?
 ) : Serializable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

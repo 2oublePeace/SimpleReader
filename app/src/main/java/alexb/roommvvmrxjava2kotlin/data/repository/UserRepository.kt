@@ -2,8 +2,8 @@ package alexb.roommvvmrxjava2kotlin.data.repository
 
 import alexb.roommvvmrxjava2kotlin.data.local.dao.UserDao
 import alexb.roommvvmrxjava2kotlin.data.local.entity.User
-import io.reactivex.Completable
-import io.reactivex.Maybe
+import io.reactivex.rxjava3.core.Completable
+import io.reactivex.rxjava3.core.Maybe
 
 class UserRepository(private val userDao: UserDao) {
 
@@ -11,11 +11,11 @@ class UserRepository(private val userDao: UserDao) {
         return userDao.getUsers()
     }
 
-    fun insertUser(user: User?): Completable {
+    fun insertUser(user: User): Completable {
         return userDao.insertUser(user)
     }
 
-    fun updateUser(user: User?): Completable {
+    fun updateUser(user: User): Completable {
         return userDao.updateUser(user)
     }
 
