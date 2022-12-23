@@ -1,4 +1,4 @@
-package alexb.roommvvmrxjava2kotlin
+package emiryanvl.simplereader
 
 import org.junit.Test
 

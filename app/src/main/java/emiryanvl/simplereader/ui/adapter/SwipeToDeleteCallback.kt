@@ -1,6 +1,6 @@
-package alexb.roommvvmrxjava2kotlin.ui.adapter
+package emiryanvl.simplereader.ui.adapter
 
-import alexb.roommvvmrxjava2kotlin.R
+import emiryanvl.simplereader.R
 import android.content.Context
 import android.graphics.*
 import android.graphics.drawable.ColorDrawable

@@ -1,8 +1,8 @@
-package alexb.roommvvmrxjava2kotlin.ui.viewmodel
+package emiryanvl.simplereader.ui.viewmodel
 
-import alexb.roommvvmrxjava2kotlin.data.local.AppDatabase
-import alexb.roommvvmrxjava2kotlin.data.local.entity.User
-import alexb.roommvvmrxjava2kotlin.data.repository.UserRepository
+import emiryanvl.simplereader.data.local.AppDatabase
+import emiryanvl.simplereader.data.local.entity.Book
+import emiryanvl.simplereader.data.repository.BookRepository
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -10,19 +10,20 @@ import androidx.lifecycle.MutableLiveData
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import java.io.Serializable
 
-class UserViewModel(application: Application) : AndroidViewModel(application) {
+class CacheBookViewModel(application: Application) : AndroidViewModel(application), Serializable {
 
     private val compositeDisposable = CompositeDisposable()
 
-    private val _user = MutableLiveData<List<User>>()
-    var user: LiveData<List<User>> = _user
+    private val _user = MutableLiveData<List<Book>>()
+    var user: LiveData<List<Book>> = _user
 
-    private var userRepository: UserRepository =
-        UserRepository(AppDatabase.getDatabase(application).userDao())
+    private var bookRepository: BookRepository =
+        BookRepository(AppDatabase.getDatabase(application).userDao())
 
-    fun getUsers() {
-        userRepository.getUser()
+    fun getBooks() {
+        bookRepository.getBook()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -43,36 +44,36 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         super.onCleared()
     }
 
-    fun updateUser(user: User) {
-        userRepository.updateUser(user)
+    fun updateBook(user: Book) {
+        bookRepository.updateBook(user)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                getUsers()
+                getBooks()
             }, {
             }).let {
                 compositeDisposable.add(it)
             }
     }
 
-    fun saveUser(user: User) {
-        userRepository.insertUser(user)
+    fun saveBook(book: Book) {
+        bookRepository.insertBook(book)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                getUsers()
+                getBooks()
             }, {
             }).let {
                 compositeDisposable.add(it)
             }
     }
 
-    fun deleteUser(user: User) {
-        userRepository.deleteUser(user)
+    fun deleteUser(user: Book) {
+        bookRepository.deleteBook(user)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                getUsers()
+                getBooks()
             }, {
             }).let {
                 compositeDisposable.add(it)
