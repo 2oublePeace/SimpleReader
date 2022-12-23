@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "609311670353",
+    "firebase_url": "https://simplereader-404b8-default-rtdb.firebaseio.com",
+    "project_id": "simplereader-404b8",
+    "storage_bucket": "simplereader-404b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609311670353:android:3a1d47c6cfded351f4f870",
+        "android_client_info": {
+          "package_name": "alexb.roommvvmrxjava2kotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "609311670353-ffsfihtrrrom6mjbv2qagng6lvitn66o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_Wrpn0XSc3CVT7Rv7jeFRyQHVcX8SMQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "609311670353-ffsfihtrrrom6mjbv2qagng6lvitn66o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

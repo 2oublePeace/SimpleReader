@@ -86,10 +86,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-//TODO:Если не нало удалить
 const val ADD_USER_REQUEST = 1
-//TODO:Если не нало удалить
 const val EDIT_USER_REQUEST = 2
 const val EXTRA_CHOOSE_BOOK = "EXTRA_CHOOSE_BOOK"
-//TODO:Если не нало удалить
-const val EXTRA_REQUEST = "EXTRA_USER"
+const val EXTRA_REQUEST = "EXTRA_REQUEST"
